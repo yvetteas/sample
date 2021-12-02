@@ -28,6 +28,10 @@ pipeline {
 						}
 					}
 				}
+				stage('Test') {
+				        sh "chmod +x -R ${env.WORKSPACE}"
+							sh './jenkins/deploy.sh'
+				}				
 			}
 		}
 	}
